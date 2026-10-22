@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanij Fatema · Linguist, BRAC University</title>
+<meta name="description" content="Kanij Fatema is a linguist and Lecturer at BRAC University (previously IUB) who builds linguistically structured Bangla datasets for speech recognition, IPA transcription and low-resource NLP, including work with Bengali.AI.">
+<meta name="author" content="Kanij Fatema">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://kjfdot.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101517'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' text-anchor='middle' fill='%237FE0C9'%3Ekf%3C/text%3E%3C/svg%3E">
+
+<!-- link previews (LinkedIn, WhatsApp, Facebook, X) -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Kanij Fatema · Linguist, BRAC University">
+<meta property="og:description" content="Linguist and lecturer building linguistically structured datasets for Bangla and other under-resourced languages.">
+<meta property="og:url" content="https://kjfdot.github.io/">
+<meta property="og:image" content="https://kjfdot.github.io/kanij-profile.jpg">
+<meta property="profile:first_name" content="Kanij">
+<meta property="profile:last_name" content="Fatema">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- tells search engines who this page is about -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kanij Fatema",
+  "alternateName": ["কানিজ ফাতেমা", "Kanij Fatema BRACU"],
+  "url": "https://kjfdot.github.io/",
+  "image": "https://kjfdot.github.io/kanij-profile.jpg",
+  "email": "mailto:fatema.kanij@bracu.ac.bd",
+  "jobTitle": "Lecturer",
+  "description": "Linguist and lecturer working on Bangla speech recognition, IPA transcription, regional dialects and low-resource language technology.",
+  "worksFor": {
+    "@type": "CollegeOrUniversity",
+    "name": "BRAC University",
+    "department": { "@type": "Organization", "name": "Department of English and Humanities" },
+    "url": "https://www.bracu.ac.bd/"
+  },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Dhaka", "url": "https://www.du.ac.bd/" },
+  "affiliation": [
+    { "@type": "CollegeOrUniversity", "name": "Independent University, Bangladesh", "alternateName": "IUB" },
+    { "@type": "Organization", "name": "Bengali.AI" }
+  ],
+  "knowsAbout": ["Linguistics", "Computational linguistics", "Bangla NLP", "Bengali speech recognition", "IPA transcription", "Phonetics", "Regional dialects of Bangla", "Low-resource languages", "Language documentation"],
+  "knowsLanguage": ["Bengali", "English"],
+  "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD" },
+  "sameAs": [
+    "https://www.bracu.ac.bd/about/people/kanij-fatema",
+    "https://www.linkedin.com/in/kjf23",
+    "https://github.com/kjfdot",
+    "https://scholar.google.com/citations?user=pi7eSAsAAAAJ"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#101517;
+    --bg-raised:#161D20;
+    --bg-hover:#1C2629;
+    --text:#9DA9AE;
+    --heading:#E4EAEC;
+    --muted:#66757B;
+    --accent:#7FE0C9;
+    --accent-soft:rgba(127,224,201,0.1);
+    --line:#232E32;
+    --max:1000px;
+    --nav-h:68px;
+    --ease:cubic-bezier(.2,.7,.3,1);
+    --mono:'JetBrains Mono', ui-monospace, monospace;
+    --display:'Space Grotesk', system-ui, sans-serif;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; scroll-padding-top:var(--nav-h); }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'DM Sans', system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{ background:var(--accent); color:var(--bg); }
+
+  a{ color:var(--accent); text-decoration:none; transition:color .25s ease; }
+  a:hover{ color:var(--heading); }
+  a:focus-visible, button:focus-visible{ outline:2px dashed var(--accent); outline-offset:3px; }
+  h1,h2,h3{ color:var(--heading); margin:0; font-family:var(--display); }
+
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+
+  /* ---------- top nav ---------- */
+  .nav{
+    position:fixed; inset:0 0 auto 0; z-index:20;
+    height:var(--nav-h);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 32px;
+    background:rgba(16,21,23,0.82);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    transition:transform .35s var(--ease), box-shadow .35s ease;
+  }
+  .nav.hidden{ transform:translateY(-100%); }
+  .nav.scrolled{ box-shadow:0 10px 30px -10px rgba(0,0,0,0.5); }
+  .logo{ font-family:var(--mono); font-size:1rem; font-weight:500; color:var(--accent); }
+  .logo:hover{ color:var(--heading); }
+  .nav-links{ display:flex; gap:26px; list-style:none; margin:0; padding:0; }
+  .nav-links a{ font-family:var(--mono); font-size:12.5px; color:var(--text); }
+  .nav-links a span{ color:var(--accent); }
+  .nav-links a:hover, .nav-links a.active{ color:var(--accent); }
+
+  .menu-btn{ display:none; background:none; border:none; cursor:pointer; padding:8px; color:var(--accent); }
+  .menu-btn span{ display:block; width:24px; height:2px; background:currentColor; margin:5px 0; transition:transform .3s ease, opacity .3s ease; }
+  .menu-btn[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .menu-btn[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .menu-btn[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 860px){
+    .nav{ padding:0 20px; }
+    .menu-btn{ display:block; }
+    .nav-links{
+      position:fixed; top:var(--nav-h); right:0; width:min(75vw, 300px);
+      height:calc(100vh - var(--nav-h));
+      flex-direction:column; justify-content:center; align-items:center; gap:30px;
+      background:var(--bg-raised);
+      box-shadow:-10px 0 30px -15px rgba(0,0,0,0.6);
+      transform:translateX(100%); transition:transform .35s var(--ease);
+    }
+    .nav-links.open{ transform:translateX(0); }
+    .nav-links a{ font-size:15px; }
+  }
+
+  /* ---------- fixed side rails ---------- */
+  .rail-side{ position:fixed; bottom:0; z-index:10; display:none; flex-direction:column; align-items:center; gap:20px; }
+  .rail-side::after{ content:""; width:1px; height:90px; background:var(--muted); margin-top:4px; }
+  .rail-left{ left:40px; }
+  .rail-right{ right:40px; }
+  .rail-side a{ color:var(--muted); display:flex; transition:color .25s ease, transform .25s ease; }
+  .rail-side a:hover{ color:var(--accent); transform:translateY(-3px); }
+  .rail-side svg{ width:20px; height:20px; }
+  .rail-right a{ writing-mode:vertical-rl; font-family:var(--mono); font-size:12px; letter-spacing:0.1em; }
+  @media (min-width: 1180px){ .rail-side{ display:flex; } }
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:min(100vh, 900px);
+    display:grid; grid-template-columns:1.15fr 1fr; gap:40px; align-items:center;
+    padding:calc(var(--nav-h) + 30px) 0 60px;
+  }
+  .hero .hello{ font-family:var(--mono); color:var(--accent); font-size:13.5px; margin:0 0 16px; }
+  .hero h1{
+    font-size:clamp(2.4rem, 6.4vw, 4rem);
+    font-weight:600; line-height:1.05; letter-spacing:-0.02em;
+    min-height:2.1em;
+  }
+  .hero h1 .name{ color:var(--accent); }
+  .caret{
+    display:inline-block; width:3px; height:0.85em; margin-left:6px;
+    background:var(--accent); vertical-align:-0.06em;
+    animation:blink 1s steps(1) infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
+  .hero .intro{ max-width:500px; margin:18px 0 0; font-size:1.08rem; }
+  .hero .intro strong{ color:var(--heading); font-weight:500; }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--mono); font-size:13.5px;
+    color:var(--accent); border:1px solid var(--accent); border-radius:6px;
+    padding:13px 20px; background:transparent; cursor:pointer;
+    transition:background-color .25s ease, transform .25s ease, box-shadow .25s ease;
+  }
+  .btn:hover{ color:var(--accent); background:var(--accent-soft); transform:translate(-3px,-3px); box-shadow:3px 3px 0 0 var(--accent); }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-top:34px; }
+
+  .dots-wrap{ position:relative; width:100%; max-width:420px; justify-self:end; }
+  #dots{ display:block; width:100%; height:auto; touch-action:pan-y; }
+  .dots-label{ font-family:var(--mono); font-size:11.5px; color:var(--muted); text-align:center; margin-top:10px; }
+  .dots-label span{ color:var(--accent); }
+
+  @media (max-width: 760px){
+    .hero{ grid-template-columns:1fr; gap:20px; min-height:auto; }
+    .dots-wrap{ order:-1; max-width:240px; justify-self:center; }
+    .hero h1{ min-height:auto; }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .hero .stage{ opacity:0; transform:translateY(14px); animation:rise .7s var(--ease) forwards; }
+    .hero .s1{ animation-delay:.1s; }
+    .hero .s2{ animation-delay:1.6s; }
+    .hero .s3{ animation-delay:1.8s; }
+    .hero .s4{ animation-delay:.3s; }
+    .nav, .rail-side{ opacity:0; animation:fadeIn .8s ease .2s forwards; }
+  }
+  @keyframes rise{ to{ opacity:1; transform:none; } }
+  @keyframes fadeIn{ to{ opacity:1; } }
+
+  /* ---------- sections ---------- */
+  section{ padding:96px 0 10px; }
+  .section-title{
+    display:flex; align-items:center; gap:18px;
+    font-size:clamp(1.4rem, 3.6vw, 1.8rem); font-weight:600;
+    margin-bottom:36px; white-space:nowrap;
+  }
+  .section-title .slash{ color:var(--accent); font-weight:400; }
+  .section-title::after{ content:""; flex:1; height:1px; background:var(--line); max-width:300px; }
+  .section-title .ipa{ order:3; font-family:var(--mono); font-weight:400; font-size:12px; color:var(--muted); }
+  @media (max-width: 560px){
+    .section-title{ white-space:normal; }
+    .section-title .ipa, .section-title::after{ display:none; }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .js .reveal{ opacity:0; transform:translateY(22px); transition:opacity .8s ease, transform .8s var(--ease); }
+    .js .reveal.in-view{ opacity:1; transform:none; }
+  }
+
+  /* ---------- about ---------- */
+  .about-grid{ display:grid; grid-template-columns:3fr 2fr; gap:56px; align-items:start; }
+  .about-grid p{ margin:0 0 16px; }
+  .portrait{ position:relative; max-width:270px; margin:0 auto; }
+  .portrait img{
+    position:relative; z-index:1; display:block; width:100%; aspect-ratio:4/5;
+    object-fit:cover; object-position:center 30%; border-radius:8px;
+    filter:grayscale(60%) contrast(1.03);
+    transition:filter .35s ease, transform .35s ease;
+  }
+  .portrait::after{
+    content:""; position:absolute; inset:0; border:2px solid var(--accent); border-radius:8px;
+    transform:translate(14px,14px); transition:transform .35s ease;
+  }
+  .portrait:hover img{ filter:none; transform:translate(-4px,-4px); }
+  .portrait:hover::after{ transform:translate(9px,9px); }
+  @media (max-width: 760px){
+    .about-grid{ grid-template-columns:1fr; gap:44px; }
+    .portrait{ max-width:220px; }
+  }
+
+  /* ---------- publications ---------- */
+  .pub-kind{ font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin:0 0 12px; }
+  .pub-group{ margin-bottom:34px; }
+  .pub{
+    display:grid; grid-template-columns:150px 1fr; gap:22px; align-items:center;
+    padding:14px; margin:0 -14px; border-radius:8px;
+    transition:background-color .3s ease;
+  }
+  .pub:hover{ background:var(--bg-raised); }
+  .pub-fig{
+    display:block; background:#fff; border-radius:6px; padding:6px;
+    height:104px; overflow:hidden;
+    filter:grayscale(70%); opacity:.85;
+    transition:filter .35s ease, opacity .35s ease, transform .35s ease;
+  }
+  .pub-fig img{ width:100%; height:100%; object-fit:contain; display:block; }
+  .pub:hover .pub-fig{ filter:none; opacity:1; transform:scale(1.03); }
+  .pub .title{ color:var(--heading); font-weight:500; line-height:1.4; display:block; }
+  .pub .title:hover{ color:var(--accent); }
+  .pub .authors{ font-size:0.88rem; color:var(--muted); margin-top:4px; }
+  .pub .authors b{ color:var(--text); font-weight:500; }
+  .pub .venue{ font-family:var(--mono); font-size:12px; color:var(--accent); margin-top:4px; }
+  @media (max-width: 560px){
+    .pub{ grid-template-columns:1fr; gap:12px; }
+    .pub-fig{ height:150px; }
+  }
+
+  /* ---------- compact rows (experience, education) ---------- */
+  .rows{ list-style:none; margin:0; padding:0; max-width:780px; }
+  .rows li{
+    display:grid; grid-template-columns:120px 1fr; gap:20px;
+    padding:12px 14px; margin:0 -14px; border-radius:8px;
+    transition:background-color .3s ease;
+  }
+  .rows li:hover{ background:var(--bg-raised); }
+  .rows .when{ font-family:var(--mono); font-size:12.5px; color:var(--muted); padding-top:2px; }
+  .rows .what{ color:var(--heading); font-weight:500; }
+  .rows .where{ color:var(--text); }
+  .rows .note{ display:block; font-size:0.92rem; color:var(--muted); margin-top:2px; }
+  .rows .note em{ color:var(--text); }
+  .pill{
+    display:inline-block; margin-left:8px; font-family:var(--mono); font-size:11px;
+    color:var(--accent); border:1px solid rgba(127,224,201,0.35); border-radius:99px; padding:1px 9px;
+    transition:background-color .25s ease;
+  }
+  .pill:hover{ background:var(--accent-soft); color:var(--accent); }
+  @media (max-width: 560px){ .rows li{ grid-template-columns:1fr; gap:2px; } }
+
+  /* ---------- projects ---------- */
+  .featured{
+    display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center;
+    background:var(--bg-raised); border-radius:10px; padding:22px; margin-bottom:22px;
+  }
+  .featured img{
+    display:block; width:100%; border-radius:6px;
+    filter:grayscale(60%); transition:filter .4s ease;
+  }
+  .featured:hover img{ filter:none; }
+  .featured h3{ font-size:1.15rem; font-weight:600; margin:4px 0 8px; }
+  .featured p{ margin:0; font-size:0.96rem; }
+  .tag{ font-family:var(--mono); font-size:11.5px; color:var(--accent); }
+  @media (max-width: 700px){ .featured{ grid-template-columns:1fr; } }
+
+  .proj-list{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:4px 28px; }
+  .proj-list li{
+    padding:14px; margin:0 -14px; border-radius:8px; position:relative;
+    transition:background-color .3s ease, transform .3s var(--ease);
+  }
+  .proj-list li:hover{ background:var(--bg-raised); transform:translateX(4px); }
+  .proj-list h3{ font-size:1rem; font-weight:500; line-height:1.35; }
+  .proj-list li:hover h3{ color:var(--accent); }
+  .proj-list p{ margin:4px 0 0; font-size:0.93rem; }
+  @media (max-width: 700px){ .proj-list{ grid-template-columns:1fr; } }
+
+  /* ---------- nerding ---------- */
+  .photo-strip{
+    display:grid; grid-auto-flow:column; grid-auto-columns:calc((100% - 42px) / 4); gap:14px;
+    overflow-x:auto; scroll-snap-type:x mandatory; overscroll-behavior-x:contain;
+    padding:6px 0 12px; margin-bottom:22px;
+    scrollbar-width:thin; scrollbar-color:var(--line) transparent;
+  }
+  .photo-strip::-webkit-scrollbar{ height:6px; }
+  .photo-strip::-webkit-scrollbar-thumb{ background:var(--line); border-radius:3px; }
+  .photo-strip figure{ scroll-snap-align:start; }
+  .strip-hint{ font-family:var(--mono); font-size:11px; color:var(--muted); text-align:right; margin:0 0 30px; }
+  .strip-hint span{ color:var(--accent); }
+  .photo-strip figure{ margin:0; }
+  .photo-strip img{
+    display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:6px;
+    filter:grayscale(80%); transition:filter .4s ease, transform .4s ease;
+  }
+  .photo-strip figure:hover img{ filter:none; transform:translateY(-4px); }
+  .photo-strip figcaption{ font-family:var(--mono); font-size:11px; color:var(--muted); margin-top:7px; line-height:1.45; }
+  @media (max-width: 640px){ .photo-strip{ grid-auto-columns:72%; } }
+
+  .sub-head{ font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin:0 0 12px; }
+  .blog{
+    display:flex; justify-content:space-between; align-items:center; gap:20px;
+    max-width:800px; padding:16px 18px; margin-bottom:38px;
+    border:1px solid var(--line); border-radius:8px;
+    transition:border-color .3s ease, background-color .3s ease, transform .3s var(--ease);
+  }
+  .blog:hover{ border-color:var(--accent); background:var(--bg-raised); transform:translateY(-3px); }
+  .blog strong{ display:block; color:var(--heading); font-weight:500; }
+  .blog span{ font-size:0.9rem; color:var(--muted); }
+  .blog .arrow{ font-family:var(--mono); color:var(--accent); font-size:1.1rem; }
+
+  .log{ list-style:none; margin:0; padding:0; max-width:800px; position:relative; }
+  .log::before{ content:""; position:absolute; left:96px; top:10px; bottom:10px; width:1px; background:var(--line); }
+  .log li{ display:grid; grid-template-columns:96px 1fr; gap:26px; padding:10px 0; position:relative; }
+  .log li::before{
+    content:""; position:absolute; left:92px; top:19px; width:9px; height:9px; border-radius:50%;
+    background:var(--bg); border:1px solid var(--muted);
+    transition:background-color .3s ease, border-color .3s ease;
+  }
+  .log li:hover::before{ background:var(--accent); border-color:var(--accent); }
+  .log time{ font-family:var(--mono); font-size:12px; color:var(--muted); padding-top:3px; }
+  .log .kind{ font-family:var(--mono); font-size:11px; color:var(--accent); margin-right:8px; }
+  .log strong{ color:var(--heading); font-weight:500; }
+  @media (max-width: 560px){
+    .log::before, .log li::before{ display:none; }
+    .log li{ grid-template-columns:1fr; gap:0; }
+  }
+
+  .photo-strip figure{ cursor:zoom-in; }
+  .photo-strip figure:focus-visible{ outline:2px dashed var(--accent); outline-offset:4px; border-radius:6px; }
+
+  /* ---------- photo lightbox ---------- */
+  .lightbox{
+    position:fixed; inset:0; z-index:50;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
+    margin:0; padding:24px; cursor:zoom-out; outline:none;
+    background:rgba(10,14,16,0);
+    pointer-events:none; visibility:hidden;
+    transition:background-color .45s ease, backdrop-filter .45s ease, visibility 0s linear .45s;
+  }
+  .lightbox.open{
+    background:rgba(10,14,16,0.8);
+    backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    pointer-events:auto; visibility:visible;
+    transition:background-color .45s ease, backdrop-filter .45s ease;
+  }
+  .lightbox img{
+    display:block; max-width:min(70vw, 760px); max-height:64vh; border-radius:8px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.7);
+    transform-origin:center center;
+    transition:transform .5s var(--ease), opacity .35s ease;
+  }
+  .lightbox figcaption{
+    font-family:var(--mono); font-size:12px; color:var(--text); text-align:center; max-width:600px;
+    opacity:0; transform:translateY(6px); transition:opacity .35s ease, transform .35s ease;
+  }
+  .lightbox.open figcaption{ opacity:1; transform:none; transition-delay:.2s; }
+  .lightbox figcaption::before{ content:"/ "; color:var(--accent); }
+
+  /* keep pictures from being dragged or saved */
+  img{ -webkit-user-drag:none; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
+
+  /* ---------- footer ---------- */
+  footer{ text-align:center; padding:110px 0 36px; font-family:var(--mono); font-size:12px; color:var(--muted); }
+  footer p{ margin:6px 0; }
+  .footer-social{ display:flex; justify-content:center; gap:22px; margin-bottom:18px; }
+  .footer-social a{ color:var(--muted); }
+  .footer-social a:hover{ color:var(--accent); }
+  .footer-social svg{ width:20px; height:20px; }
+  @media (min-width: 1180px){ .footer-social{ display:none; } }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .caret{ animation:none; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+  <symbol id="i-scholar" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M12 3 1.5 9 12 15l10.5-6L12 3z"/><path fill="none" stroke="currentColor" stroke-width="1.7" d="M5.5 11.5v4.8c0 1.8 2.9 3.2 6.5 3.2s6.5-1.4 6.5-3.2v-4.8M22.5 9v6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m3 6 9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <a class="logo" href="#top" aria-label="Back to top">&lt;kf /&gt;</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about"><span>/</span> about</a></li>
+    <li><a href="#publications"><span>/</span> publications</a></li>
+    <li><a href="#experience"><span>/</span> experience</a></li>
+    <li><a href="#education"><span>/</span> education</a></li>
+    <li><a href="#projects"><span>/</span> projects</a></li>
+    <li><a href="#nerding"><span>/</span> nerding</a></li>
+  </ul>
+</header>
+
+<div class="rail-side rail-left">
+  <a href="https://github.com/kjfdot" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
+  <a href="https://www.linkedin.com/in/kjf23" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+  <a href="https://scholar.google.com/citations?user=pi7eSAsAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><svg><use href="#i-scholar"/></svg></a>
+  <a href="mailto:fatema.kanij@bracu.ac.bd" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+</div>
+<div class="rail-side rail-right">
+  <a href="mailto:fatema.kanij@bracu.ac.bd">fatema.kanij@bracu.ac.bd</a>
+</div>
+
+<main class="wrap" id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Introduction">
+    <div>
+      <p class="hello stage s1">/haɪ/ — welcome, dear reader</p>
+      <h1><span id="typed" aria-label="hi there, i am kanij.">hi there, i am <span class="name">kanij</span>.</span><span class="caret" aria-hidden="true"></span></h1>
+      <p class="intro stage s2"><strong>Lecturer and linguistic researcher in Bangladesh.</strong> I build linguistically structured datasets for under-resourced languages, and I teach students how not to fear linguistics.</p>
+      <div class="hero-actions stage s3">
+        <a class="btn" href="mailto:fatema.kanij@bracu.ac.bd"><svg width="16" height="16"><use href="#i-mail"/></svg>Say hi</a>
+        <a class="btn" href="#publications">Read my work</a>
+      </div>
+    </div>
+    <div class="dots-wrap stage s4">
+      <canvas id="dots" role="img" aria-label="Portrait of Kanij Fatema drawn in dots; dots near the cursor turn into IPA symbols"></canvas>
+      <p class="dots-label"><span>/kaniɟ pʰat̪ema/</span> · hover to scatter some phonemes</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="section-title reveal"><span><span class="slash">/</span> about me</span><span class="ipa">/əˈbaʊt/</span></h2>
+    <div class="about-grid reveal">
+      <div>
+        <p>I'm Kanij Fatema, a linguist from Bangladesh. I'm currently a Lecturer in the Department of English and Humanities at <a href="https://www.bracu.ac.bd/" target="_blank" rel="noopener">BRAC University</a>. Before that, I was a Lecturer in the Department of English and Modern Languages at <a href="https://iub.ac.bd/" target="_blank" rel="noopener">Independent University, Bangladesh</a>. I did my BA and MA in Linguistics at the <a href="https://www.du.ac.bd/" target="_blank" rel="noopener">University of Dhaka</a>.</p>
+        <p>I've also built datasets for a range of domain-specific work on the Bangla language. You can find them on <a href="https://github.com/kjfdot?tab=repositories" target="_blank" rel="noopener">my GitHub</a>.</p>
+        <p>I'm applying to <strong style="color:var(--heading);font-weight:500">PhD programs in Linguistics for Fall 2027</strong>.</p>
+        <p>In my free time, I've been tinkering with Python, reading psychological crime thrillers, and hopping between cafés in Dhaka and wherever else I get to visit. Oh, and I love cooking too.</p>
+      </div>
+      <div class="portrait">
+        <img src="kanij-profile.jpg" alt="Kanij Fatema in a white t-shirt and sunglasses, sitting by a café window">
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <h2 class="section-title reveal"><span><span class="slash">/</span> publications</span><span class="ipa">/ˌpʌblɪˈkeɪʃənz/</span></h2>
+
+    <div class="pub-group reveal">
+      <p class="pub-kind">Peer-reviewed conference proceedings</p>
+      <div class="pub">
+        <a class="pub-fig" href="https://aclanthology.org/2025.ijcnlp-short.17/" target="_blank" rel="noopener" tabindex="-1"><img src="figures/asr-tsne.png" alt="t-SNE plot showing dialect speech separating from standard Bengali speech" loading="lazy"></a>
+        <div>
+          <a class="title" href="https://aclanthology.org/2025.ijcnlp-short.17/" target="_blank" rel="noopener">Are ASR foundation models generalized enough to capture features of regional dialects for low-resource languages?</a>
+          <div class="authors">Dipto, T. T., Hossain, A., Faruque, R. S., Hassan, M. R., <b>Fatema, K.</b>, et al.</div>
+          <div class="venue">IJCNLP–AACL 2025</div>
+        </div>
+      </div>
+      <div class="pub">
+        <a class="pub-fig" href="https://aclanthology.org/2024.lrec-main.1479/" target="_blank" rel="noopener" tabindex="-1"><img src="figures/unicode-graphemes.png" alt="Bangla grapheme stacked from its orthographic components" loading="lazy"></a>
+        <div>
+          <a class="title" href="https://aclanthology.org/2024.lrec-main.1479/" target="_blank" rel="noopener">Unicode normalization and grapheme parsing of Indic languages</a>
+          <div class="authors">Ansary, N., Adib, Q. A. R., Reasat, T., Sushmit, A. S., Humayun, A. I., Mehnaz, S., <b>Fatema, K.</b>, Rashid, M. M. O., &amp; Sadeque, F.</div>
+          <div class="venue">LREC–COLING 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group reveal">
+      <p class="pub-kind">Preprints</p>
+      <div class="pub">
+        <a class="pub-fig" href="https://arxiv.org/abs/2510.24096" target="_blank" rel="noopener" tabindex="-1"><img src="figures/regspeech12-map.png" alt="Map of Bangladesh with the twelve dialect regions of RegSpeech12 highlighted" loading="lazy"></a>
+        <div>
+          <a class="title" href="https://arxiv.org/abs/2510.24096" target="_blank" rel="noopener">RegSpeech12: A regional corpus of Bengali spontaneous speech across dialects</a>
+          <div class="authors">Hassan, M. R., Hossain, A., <b>Fatema, K.</b>, Faruque, R. S., et al.</div>
+          <div class="venue">arXiv 2025</div>
+        </div>
+      </div>
+      <div class="pub">
+        <a class="pub-fig" href="https://arxiv.org/abs/2403.20084" target="_blank" rel="noopener" tabindex="-1"><img src="figures/ipa-consonants.png" alt="Proposed Bangla consonant chart with IPA symbols" loading="lazy"></a>
+        <div>
+          <a class="title" href="https://arxiv.org/abs/2403.20084" target="_blank" rel="noopener">IPA transcription of Bengali texts</a>
+          <div class="authors"><b>Fatema, K.</b>, Haider, F. D., Turpa, N. F., Azmal, T., Ahmed, S., Hasan, N., et al.</div>
+          <div class="venue">arXiv 2024</div>
+        </div>
+      </div>
+      <div class="pub">
+        <a class="pub-fig" href="https://arxiv.org/abs/2404.11752" target="_blank" rel="noopener" tabindex="-1"><img src="figures/mapping-violence-heatmap.png" alt="Heatmap of co-occurrence between violence categories and expression types" loading="lazy"></a>
+        <div>
+          <a class="title" href="https://arxiv.org/abs/2404.11752" target="_blank" rel="noopener">Mapping violence: Developing an extensive framework to build a Bangla sectarian expression dataset from social media interactions</a>
+          <div class="authors">Tasnim, N., Gupta, S. S., Shihab, M. I. H., Juee, F. I., Tahsin, A., Ghum, P., <b>Fatema, K.</b>, et al.</div>
+          <div class="venue">arXiv 2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2 class="section-title reveal"><span><span class="slash">/</span> experience</span><span class="ipa">/ɪkˈspɪəriəns/</span></h2>
+    <ul class="rows reveal">
+      <li><span class="when">2025 — now</span><span><span class="what">Lecturer</span> · <span class="where">Dept. of English and Humanities, BRAC University</span></span></li>
+      <li><span class="when">2024 — 2025</span><span><span class="what">Lecturer</span> · <span class="where">Dept. of English and Modern Languages, Independent University, Bangladesh</span></span></li>
+      <li><span class="when">2023 — 2024</span><span><span class="what">Research Assistant</span> · <span class="where">Dept. of Computer Science and Engineering, BRAC University</span></span></li>
+      <li><span class="when">2022 — 2024</span><span><span class="what">Linguist</span> · <span class="where">Bengali.AI</span><a class="pill" href="https://www.prothomalo.com/lifestyle/701twi30lv" target="_blank" rel="noopener">in Prothom Alo ↗</a></span></li>
+      <li><span class="when">2022</span><span><span class="what">Associate Linguist</span> · <span class="where">Dream71 Bangladesh Ltd.</span></span></li>
+      <li><span class="when">2020 — 2022</span><span><span class="what">Quiz Creator</span> · <span class="where">10 Minute School</span></span></li>
+    </ul>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2 class="section-title reveal"><span><span class="slash">/</span> education</span><span class="ipa">/ˌɛdʒʊˈkeɪʃən/</span></h2>
+    <ul class="rows reveal">
+      <li>
+        <span class="when">2023</span>
+        <span><span class="what">MA in Linguistics</span> · <span class="where">University of Dhaka</span>
+          <span class="note">Ranked 2nd in cohort. Thesis: <em>Data-Driven Learning for the Academic Writing Practice by the Bengali Learner of English: The Case of English Phrasal Verbs Collocation</em></span></span>
+      </li>
+      <li>
+        <span class="when">2022</span>
+        <span><span class="what">BA in Linguistics</span> · <span class="where">University of Dhaka</span>
+          <span class="note">Undergraduate Merit Scholarship (2021)</span></span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2 class="section-title reveal"><span><span class="slash">/</span> research projects</span><span class="ipa">/ˈprɒdʒɛkts/</span></h2>
+
+    <div class="featured reveal">
+      <img src="kokborok-fieldwork-2.jpg" alt="Kanij Fatema and her field team with Kokborok community members in Khagrachari" loading="lazy">
+      <div>
+        <span class="tag">fieldwork · Khagrachari</span>
+        <h3>Nominal Morphology of Kokborok</h3>
+        <p>I travelled to Khagrachari with my MA team to document Kokborok's nominal morphology with community members. Later, I returned to the language as Principal Investigator of an IUB Startup Research Fund study.</p>
+      </div>
+    </div>
+
+    <ul class="proj-list reveal">
+      <li><span class="tag">2023–25</span><h3>Regional Bengali speech &amp; dialect ASR</h3><p>I transcribed, annotated, and quality-checked dialectal speech for RegSpeech12 and our IJCNLP–AACL paper.</p></li>
+      <li><span class="tag">2024</span><h3>Bengali IPA transcription</h3><p>As first author, I built an IPA transcription framework and annotated dataset for Bengali.</p></li>
+      <li><span class="tag">2023–24</span><h3>Indic Unicode normalization</h3><p>I gave the linguistic input on grapheme structure across seven Indic scripts.</p></li>
+      <li><span class="tag">2024</span><h3>Mapping Violence dataset</h3><p>I annotated and validated a 13,000-sentence Bengali social-media dataset.</p></li>
+      <li><span class="tag">Bengali.AI</span><h3>Morphological variation benchmark</h3><p>I built a corpus of tense, aspect, and morphological variation across standard and regional Bengali.</p></li>
+      <li><span class="tag">Bengali.AI</span><h3>Sylheti Nagri OCR dataset</h3><p>I collected and quality-checked Sylheti Nagri script data for an OCR system.</p></li>
+      <li><span class="tag">Bengali.AI</span><h3>Grammar correction dataset</h3><p>I curated error–correction sentence pairs, later used in a BUET NLP competition.</p></li>
+    </ul>
+  </section>
+
+  <!-- NERDING -->
+  <section id="nerding">
+    <h2 class="section-title reveal"><span><span class="slash">/</span> find me nerding about Bangla NLP</span></h2>
+
+    <div class="photo-strip reveal">
+      <figure>
+        <img style="object-position:center 68%" src="reading-detached-belonging.jpg" alt="Kanij Fatema reading at a BRAC University podium" loading="lazy">
+        <figcaption>Reading from <em>Detached Belonging</em> · ENH, BRAC University</figcaption>
+      </figure>
+      <figure>
+        <img src="baulc-talk.jpg" alt="Phone on a tripod showing Kanij Fatema joining the panel by video call" loading="lazy">
+        <figcaption>Language Meets Innovation · BAU Language Club</figcaption>
+      </figure>
+      <figure>
+        <img src="talk-bracu-symposium.jpg" alt="Kanij Fatema presenting a slide on annotation and validation" loading="lazy">
+        <figcaption>IPA talk · BRAC University symposium</figcaption>
+      </figure>
+      <figure>
+        <img src="bhashamul-uiu.jpg" alt="Kanij Fatema receiving a crest on stage at Bhashamul, UIU Computer Club" loading="lazy">
+        <figcaption>Bhashamul · UIU Computer Club</figcaption>
+      </figure>
+      <figure>
+        <img src="dataverse-iit-du.jpg" alt="Participants and judges seated in a University of Dhaka classroom during the DataVerse Challenge" loading="lazy">
+        <figcaption>DataVerse Challenge · IIT, University of Dhaka</figcaption>
+      </figure>
+      <figure>
+        <img style="object-position:center 40%" src="dl-sprint-buet.jpg" alt="Group photo of organisers and judges in front of the DL Sprint 2.0 slide at BUET" loading="lazy">
+        <figcaption>DL Sprint 2.0 · BUET</figcaption>
+      </figure>
+      <figure>
+        <img src="classroom.jpg" alt="Kanij Fatema leading a workshop on Standard Bangla IPA" loading="lazy">
+        <figcaption>Workshop on Standard Bangla IPA</figcaption>
+      </figure>
+    </div>
+    <p class="strip-hint" aria-hidden="true">scroll for more <span>→</span></p>
+
+    <p class="sub-head reveal">Newspaper blog</p>
+    <a class="blog reveal" href="https://www.theeducationgazette.com/categories/tech/the-cognitive-offloading-freeloader-and-the-luxury-of-not-thinking" target="_blank" rel="noopener">
+      <span><strong>The Cognitive Offloading Freeloader and the Luxury of Not Thinking</strong><span>The Education Gazette</span></span>
+      <span class="arrow" aria-hidden="true">↗</span>
+    </a>
+
+    <p class="sub-head reveal">Talks, papers &amp; other things</p>
+    <ul class="log reveal">
+      <li><time>Oct 2026</time><span><span class="kind">reading</span>Read an excerpt from <strong><em>Detached Belonging</em></strong> at <em>Literature and Crisis: Dilruba Z. Ara in Conversation with Sabiha Huq</em>, Department of English and Humanities, BRAC University.</span></li>
+      <li><time>Jun 2026</time><span><span class="kind">talk</span><strong>Language Meets Innovation: Where Bangla Stands in AI.</strong> Invited panel, Bangladesh Agricultural University Language Club.</span></li>
+      <li><time>Dec 2025</time><span><span class="kind">talk</span><strong>IPA Transcription of Bengali Texts.</strong> Exploring New Technologies in Language Teaching and Research Symposium, BRAC University.</span></li>
+      <li><time>Nov 2025</time><span><span class="kind">paper</span>Our ASR and regional dialects paper was accepted to <strong>IJCNLP–AACL 2025</strong>.</span></li>
+      <li><time>Oct 2025</time><span><span class="kind">paper</span>Released <strong>RegSpeech12</strong>, a corpus of spontaneous Bengali speech across dialects.</span></li>
+      <li><time>2024</time><span><span class="kind">paper</span>Our Unicode normalization and grapheme parsing paper was accepted to <strong>LREC–COLING 2024</strong>.</span></li>
+      <li><time>2024</time><span><span class="kind">grant</span>Won the <strong>IUB Startup Research Fund</strong> as PI for a morphological study of Kokborok.</span></li>
+      <li><time>Feb 2024</time><span><span class="kind">panel</span><strong>Bhashamul: In Search of Spoken Language.</strong> Panelist and competition judge, UIU Computer Club.</span></li>
+      <li><time>Nov 2023</time><span><span class="kind">judge</span><strong>DataVerse Challenge.</strong> Judge, IIT Community, University of Dhaka.</span></li>
+      <li><time>Oct 2023</time><span><span class="kind">workshop</span><strong>Hands-on NLP: Bengali Transcription Modeling.</strong> Guest speaker, IIT, University of Dhaka.</span></li>
+      <li><time>Aug 2023</time><span><span class="kind">talk</span><strong>Bengali Language in NLP: Progress and Future.</strong> ASRRO, CUET.</span></li>
+      <li><time>Jul 2023</time><span><span class="kind">talk</span><strong>AI Symposium: Exploring Bangla AI.</strong> Invited talk, Tech Topia, Dhaka.</span></li>
+      <li><time>Jul 2023</time><span><span class="kind">judge</span><strong>DL Sprint 2.0: Bengali ASR and Document Layout Analysis.</strong> Judge and workshop facilitator, BUET.</span></li>
+      <li><time>2023</time><span><span class="kind">judge</span><strong>IEEE 2023 Datathon.</strong> Competition judge, IEEE Bangladesh Section.</span></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-social">
+    <a href="https://github.com/kjfdot" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
+    <a href="https://www.linkedin.com/in/kjf23" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+    <a href="https://scholar.google.com/citations?user=pi7eSAsAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><svg><use href="#i-scholar"/></svg></a>
+    <a href="mailto:fatema.kanij@bracu.ac.bd" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+  </div>
+  <p>Built and designed by Kanij Fatema.</p>
+  <p>© <span id="year">2026</span> All rights reserved.</p>
+</footer>
+
+<figure class="lightbox" id="lightbox" tabindex="-1" aria-hidden="true">
+  <img alt="" draggable="false">
+  <figcaption></figcaption>
+</figure>
+
+<script>
+  document.documentElement.classList.add('js');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Typewriter greeting
+  (function(){
+    const el = document.getElementById('typed');
+    if(!el || reduceMotion) return;
+    const parts = [['hi there, i am ', ''], ['kanij', 'name'], ['.', '']];
+    el.textContent = '';
+    let p = 0, i = 0, span = null;
+    function tick(){
+      if(p >= parts.length) return;
+      const [text, cls] = parts[p];
+      if(i === 0){
+        span = document.createElement('span');
+        if(cls) span.className = cls;
+        el.appendChild(span);
+      }
+      span.textContent += text[i++];
+      if(i >= text.length){ p++; i = 0; }
+      setTimeout(tick, 55 + Math.random() * 55);
+    }
+    setTimeout(tick, 400);
+  })();
+
+  // Dot portrait: halftone dots that assemble into a portrait; dots near the cursor become IPA symbols
+  (function(){
+    const PORTRAIT = 'data:image/jpeg;base64,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';
+    const canvas = document.getElementById('dots');
+    const ctx = canvas.getContext('2d');
+    const COLS = 78;
+    const GLYPHS = ['ə','ʃ','ŋ','ɟ','ɔ','æ','ʒ','θ','ɾ','ʈ','ɖ','ɛ','ʊ','ɲ','ʰ','ɦ','χ','ʔ'];
+    const DOT = [142,155,161], ACC = [127,224,201];
+    let dots = [], rows = 0, W = 0, H = 0, cell = 0, raf = null, t0 = 0, visible = true;
+    const pointer = { x:-1e4, y:-1e4, active:false };
+
+    const img = new Image();
+    img.onload = () => { sample(); resize(true); };
+    img.src = PORTRAIT;
+
+    function sample(){
+      rows = Math.round(COLS * img.height / img.width);
+      const off = document.createElement('canvas');
+      off.width = COLS; off.height = rows;
+      const o = off.getContext('2d');
+      o.drawImage(img, 0, 0, COLS, rows);
+      const px = o.getImageData(0, 0, COLS, rows).data;
+      const lums = [];
+      for(let k = 0; k < px.length; k += 4) lums.push((0.299 * px[k] + 0.587 * px[k+1] + 0.114 * px[k+2]) / 255);
+      // stretch contrast between the 4th and 96th percentile brightness
+      const sorted = lums.slice().sort((a, b) => a - b);
+      const lo = sorted[Math.floor(sorted.length * 0.04)], hi = sorted[Math.floor(sorted.length * 0.96)];
+      for(let y = 0; y < rows; y++){
+        for(let x = 0; x < COLS; x++){
+          const lum = (lums[y * COLS + x] - lo) / (hi - lo);
+          let d = Math.pow(Math.min(1, Math.max(0, lum)), 0.8);
+          // soft round vignette so the edges fade out
+          const nx = x / COLS - 0.5, ny = y / rows - 0.5;
+          const r = Math.sqrt(nx * nx + ny * ny);
+          d *= 1 - Math.min(1, Math.max(0, (r - 0.38) / 0.14));
+          if(d < 0.07) continue;
+          dots.push({ gx:x, gy:y, s:d, x:0, y:0, vx:0, vy:0,
+                      delay:Math.random() * 1100, glyph:GLYPHS[(x * 7 + y * 13) % GLYPHS.length] });
+        }
+      }
+    }
+
+    function resize(scatter){
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = canvas.clientWidth;
+      H = W * rows / COLS;
+      cell = W / COLS;
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      canvas.style.height = H + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      dots.forEach(d => {
+        d.tx = (d.gx + 0.5) * cell; d.ty = (d.gy + 0.5) * cell;
+        if(scatter && !reduceMotion){
+          d.x = Math.random() * W; d.y = Math.random() * H;
+        } else { d.x = d.tx; d.y = d.ty; }
+      });
+      t0 = performance.now();
+      if(reduceMotion) draw(Infinity); else start();
+    }
+
+    function draw(elapsed){
+      ctx.clearRect(0, 0, W, H);
+      const R = cell * 7;
+      ctx.font = `${Math.max(9, cell * 1.5)}px 'JetBrains Mono', monospace`;
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      for(const d of dots){
+        const age = Math.min(1, Math.max(0, (elapsed - d.delay) / 600));
+        const dx = d.x - pointer.x, dy = d.y - pointer.y;
+        const near = pointer.active ? Math.max(0, 1 - Math.sqrt(dx * dx + dy * dy) / R) : 0;
+        const a = (0.25 + 0.75 * d.s) * (0.25 + 0.75 * age);
+        const c = near > 0 ? DOT.map((v, i) => Math.round(v + (ACC[i] - v) * Math.min(1, near * 1.6))) : DOT;
+        ctx.fillStyle = `rgba(${c[0]},${c[1]},${c[2]},${a})`;
+        if(near > 0.35 && (d.gx + d.gy) % 3 === 0){
+          ctx.fillText(d.glyph, d.x, d.y);
+        } else if(!(near > 0.35)){
+          ctx.beginPath();
+          ctx.arc(d.x, d.y, Math.max(0.6, cell * 0.46 * d.s), 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+    }
+
+    function step(now){
+      const elapsed = now - t0;
+      const R = cell * 7;
+      let moving = false;
+      for(const d of dots){
+        if(elapsed < d.delay) { moving = true; continue; }
+        let ax = (d.tx - d.x) * 0.07, ay = (d.ty - d.y) * 0.07;
+        if(pointer.active){
+          const dx = d.x - pointer.x, dy = d.y - pointer.y;
+          const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+          if(dist < R){
+            const f = (1 - dist / R) * 2.2;
+            ax += dx / dist * f; ay += dy / dist * f;
+          }
+        }
+        d.vx = (d.vx + ax) * 0.78; d.vy = (d.vy + ay) * 0.78;
+        d.x += d.vx; d.y += d.vy;
+        if(Math.abs(d.vx) + Math.abs(d.vy) > 0.02 || Math.abs(d.tx - d.x) + Math.abs(d.ty - d.y) > 0.3) moving = true;
+      }
+      draw(elapsed);
+      raf = (moving || pointer.active) && visible ? requestAnimationFrame(step) : null;
+    }
+
+    function start(){ if(!raf && visible) raf = requestAnimationFrame(step); }
+
+    if(!reduceMotion){
+      canvas.addEventListener('pointermove', e => {
+        const r = canvas.getBoundingClientRect();
+        pointer.x = e.clientX - r.left; pointer.y = e.clientY - r.top; pointer.active = true;
+        start();
+      });
+      canvas.addEventListener('pointerleave', () => { pointer.active = false; pointer.x = pointer.y = -1e4; start(); });
+      if('IntersectionObserver' in window){
+        new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; if(visible) start(); }).observe(canvas);
+      }
+    }
+    let rt;
+    window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => dots.length && resize(false), 150); });
+  })();
+
+  // Nav: hide on scroll down, show on scroll up; highlight current section
+  (function(){
+    const nav = document.getElementById('nav');
+    const list = document.getElementById('navLinks');
+    let lastY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 10);
+      if(!list.classList.contains('open')) nav.classList.toggle('hidden', y > lastY && y > 200);
+      lastY = y;
+    }, { passive:true });
+
+    const links = document.querySelectorAll('.nav-links a');
+    const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    if(!('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin:'-45% 0px -50% 0px' });
+    sections.forEach(s => io.observe(s));
+  })();
+
+  // Mobile menu
+  (function(){
+    const btn = document.getElementById('menuBtn');
+    const list = document.getElementById('navLinks');
+    const setOpen = open => {
+      list.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    btn.addEventListener('click', () => setOpen(!list.classList.contains('open')));
+    list.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+  })();
+
+  // Photo lightbox: the clicked photo grows out of its thumbnail
+  (function(){
+    const box = document.getElementById('lightbox');
+    const big = box.querySelector('img');
+    const cap = box.querySelector('figcaption');
+    let current = null;
+
+    function fromThumb(thumb){
+      const a = thumb.getBoundingClientRect(), b = big.getBoundingClientRect();
+      const s = a.width / b.width;
+      const dx = (a.left + a.width / 2) - (b.left + b.width / 2);
+      const dy = (a.top + a.height / 2) - (b.top + b.height / 2);
+      return `translate(${dx}px, ${dy}px) scale(${s})`;
+    }
+
+    function open(fig){
+      const thumb = fig.querySelector('img');
+      current = thumb;
+      cap.innerHTML = fig.querySelector('figcaption').innerHTML;
+      big.alt = thumb.alt;
+      // wait until the big image has a size, so the grow animation can be measured
+      const go = () => { big.onload = null; if(current === thumb) show(thumb); };
+      big.onload = go;
+      big.src = thumb.src;
+      if(big.complete && big.naturalWidth) go();
+    }
+
+    function show(thumb){
+      box.classList.add('open');
+      box.setAttribute('aria-hidden', 'false');
+      if(!reduceMotion){
+        big.style.transition = 'none';
+        big.style.transform = fromThumb(thumb);
+        big.style.opacity = '0.6';
+        big.getBoundingClientRect();
+        big.style.transition = '';
+      }
+      big.style.transform = ''; big.style.opacity = '1';
+      box.focus({ preventScroll:true });
+    }
+
+    function close(){
+      if(!current) return;
+      if(!reduceMotion) big.style.transform = fromThumb(current);
+      big.style.opacity = '0';
+      box.classList.remove('open');
+      box.setAttribute('aria-hidden', 'true');
+      current.closest('figure').focus({ preventScroll:true });
+      current = null;
+    }
+
+    document.querySelectorAll('.photo-strip figure').forEach(fig => {
+      fig.tabIndex = 0;
+      fig.setAttribute('role', 'button');
+      fig.setAttribute('aria-label', 'Enlarge photo: ' + fig.querySelector('figcaption').textContent);
+      fig.addEventListener('click', () => open(fig));
+      fig.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(fig); } });
+    });
+    box.addEventListener('click', close);
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') close(); });
+    window.addEventListener('scroll', () => { if(current) close(); }, { passive:true });
+  })();
+
+  // Discourage saving pictures: no right-click menu or dragging on images
+  (function(){
+    document.querySelectorAll('img').forEach(img => img.setAttribute('draggable', 'false'));
+    document.addEventListener('contextmenu', e => {
+      if(e.target.closest('img, canvas, .pub-fig, .lightbox')) e.preventDefault();
+    });
+    document.addEventListener('dragstart', e => { if(e.target.tagName === 'IMG') e.preventDefault(); });
+  })();
+
+  // Reveal sections on scroll
+  (function(){
+    const items = document.querySelectorAll('.reveal');
+    if(reduceMotion || !('IntersectionObserver' in window)){
+      items.forEach(el => el.classList.add('in-view'));
+      return;
+    }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.1, rootMargin:'0px 0px -40px 0px' });
+    items.forEach(el => io.observe(el));
+  })();
+</script>
+</body>
+</html>
