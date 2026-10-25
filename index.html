@@ -405,45 +405,56 @@
   /* keep pictures from being dragged or saved */
   img{ -webkit-user-drag:none; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
 
-  /* ---------- coffee mug (pixel art) ---------- */
-  .coffee{ display:flex; flex-direction:column; align-items:center; gap:12px; margin:84px auto 0; text-align:center; }
-  .mug{ background:none; border:0; padding:0; line-height:0; cursor:pointer; -webkit-tap-highlight-color:transparent; }
-  .mug svg{ display:block; width:132px; height:auto; }
-  .mug .m-wall{ fill:var(--accent); }
-  .mug .m-in{ fill:var(--bg-raised); }
-  .mug .m-table{ fill:var(--muted); }
-  .mug .m-rim{ fill:var(--text); }
-  .mug .m-drip{ fill:var(--muted); }
-  .mug .m-coffee, .mug .stream{ fill:#B9783F; }
-  .mug .m-crema{ fill:#E0AA6E; }
-  .mug .m-steam{ fill:var(--text); opacity:0; }
-  .mug .cup-row{ opacity:0; }
-  .mug .stream{ transform-box:fill-box; transform-origin:50% 0; transform:scaleY(0); }
+  /* ---------- iced espresso glass (pixel art) ---------- */
+  .coffee{ display:flex; flex-direction:column; align-items:center; gap:14px; margin:84px auto 0; text-align:center; }
+  .glass{ background:none; border:0; padding:0; line-height:0; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+  .glass svg{ display:block; width:161px; height:auto; }
+  .glass .g-wall{ fill:var(--text); }
+  .glass .g-in{ fill:var(--bg-raised); }
+  .glass .g-base{ fill:var(--text); fill-opacity:.28; }
+  .glass .g-shine{ fill:#fff; fill-opacity:.1; }
+  .glass .g-table{ fill:var(--muted); }
+  .glass .m-coffee{ fill:#5E3A20; }
+  .glass .m-crema{ fill:#D3A56A; }
+  .glass .cup-row{ opacity:0; }
+  .glass .stream{ fill:#8B5A33; transform-box:fill-box; transform-origin:50% 0; transform:scaleY(0); }
+  .glass .drop{ fill:#8B5A33; opacity:0; }
+  .glass .i-body{ fill:#DCF0F6; fill-opacity:.52; }
+  .glass .i-hi{ fill:#fff; fill-opacity:.95; }
+  .glass .i-hi2{ fill:#fff; fill-opacity:.75; }
+  .glass .i-sh{ fill:#7FA0AE; fill-opacity:.6; }
+  .glass .ice{ transform:none; }
   .coffee.full .cup-row{ opacity:1; }
-  .coffee.full .m-steam{ opacity:.5; }
+  .coffee.full .ice{ transform:translateY(calc(var(--lift) * -1px)); }
   .coffee-note{ margin:0; font-family:var(--mono); font-size:12.5px; }
-  .coffee-note a{ color:var(--muted); transition:color .5s ease; }
-  .coffee.full .coffee-note a{ color:var(--accent); }
-  .coffee.full .coffee-note a:hover{ color:var(--heading); }
+  .coffee-note a{ color:var(--accent); border-bottom:1px dashed rgba(127,224,201,0.5); padding-bottom:1px; transition:color .25s ease, border-color .25s ease; }
+  .coffee-note a:hover{ color:var(--heading); border-color:var(--heading); }
   .coffee-hint{ margin:0; font-family:var(--mono); font-size:11px; color:var(--muted); }
 
   @media (prefers-reduced-motion: no-preference){
     @keyframes pour-stream{
       0%  { transform:scaleY(0); transform-origin:50% 0; }
       8%  { transform:scaleY(1); transform-origin:50% 0; }
-      90% { transform:scaleY(1); transform-origin:50% 100%; }
+      88% { transform:scaleY(1); transform-origin:50% 100%; }
       100%{ transform:scaleY(0); transform-origin:50% 100%; }
     }
+    @keyframes drip{
+      0%  { opacity:1; transform:translateY(0); }
+      80% { opacity:1; }
+      100%{ opacity:0; transform:translateY(8px); }
+    }
     @keyframes row-in{ to{ opacity:1; } }
-    @keyframes steam{
-      0%  { opacity:0; transform:translateY(2px); }
-      30% { opacity:.65; }
-      100%{ opacity:0; transform:translateY(-3px); }
+    @keyframes ice-float{ to{ transform:translateY(calc(var(--lift) * -1px)); } }
+    @keyframes ice-bob{
+      0%, 100%{ transform:translateY(calc(var(--lift) * -1px)); }
+      50%     { transform:translateY(calc((var(--lift) - 1) * -1px)); }
     }
     @keyframes hint-blink{ 50%{ opacity:.35; } }
-    .coffee.pouring .stream{ animation:pour-stream 2.5s linear forwards; }
-    .coffee.pouring .cup-row{ animation:row-in 0s linear forwards; animation-delay:calc(.3s + var(--i) * .26s); }
-    .coffee.full .m-steam{ opacity:0; animation:steam 2.4s steps(6) infinite; }
+    .coffee.pouring .stream{ animation:pour-stream 2.3s linear forwards; }
+    .coffee.pouring .drop{ animation:drip .45s steps(8) forwards; animation-delay:var(--d); }
+    .coffee.pouring .cup-row{ animation:row-in 0s linear forwards; animation-delay:calc(.3s + var(--i) * .16s); }
+    .coffee.pouring .ice{ animation:ice-float 1.5s steps(var(--lift)) forwards; animation-delay:.7s; }
+    .coffee.full .ice{ animation:ice-bob 3.2s steps(1, end) infinite; animation-delay:var(--bd); }
     .coffee:not(.full):not(.pouring) .coffee-hint{ animation:hint-blink 1.4s steps(1) infinite; }
   }
 
@@ -717,37 +728,58 @@
     </ul>
 
     <div class="coffee reveal" id="coffee">
-      <button class="mug" type="button" aria-label="Pour a cup of coffee">
-        <svg viewBox="0 0 22 22" shape-rendering="crispEdges" aria-hidden="true" focusable="false">
-          <rect class="m-table" x="2" y="21" width="16" height="1"/>
-          <rect class="m-in" x="5" y="9" width="10" height="11"/>
-          <rect class="cup-row m-coffee" style="--i:0" x="5" y="19" width="10" height="1"/>
-          <rect class="cup-row m-coffee" style="--i:1" x="5" y="18" width="10" height="1"/>
-          <rect class="cup-row m-coffee" style="--i:2" x="5" y="17" width="10" height="1"/>
-          <rect class="cup-row m-coffee" style="--i:3" x="5" y="16" width="10" height="1"/>
-          <rect class="cup-row m-coffee" style="--i:4" x="5" y="15" width="10" height="1"/>
-          <rect class="cup-row m-coffee" style="--i:5" x="5" y="14" width="10" height="1"/>
-          <rect class="cup-row m-coffee" style="--i:6" x="5" y="13" width="10" height="1"/>
-          <rect class="cup-row m-crema" style="--i:7" x="5" y="12" width="10" height="1"/>
-          <rect class="m-steam" style="animation-delay:0s" x="7" y="7" width="1" height="2"/>
-          <rect class="m-steam" style="animation-delay:.8s" x="10" y="7" width="1" height="2"/>
-          <rect class="m-steam" style="animation-delay:1.6s" x="13" y="7" width="1" height="2"/>
-          <rect class="stream" x="9" y="5" width="2" height="15"/>
-          <rect class="m-wall" x="4" y="9" width="1" height="11"/>
-          <rect class="m-wall" x="15" y="9" width="1" height="11"/>
-          <rect class="m-wall" x="5" y="20" width="10" height="1"/>
-          <rect class="m-wall" x="16" y="11" width="4" height="1"/>
-          <rect class="m-wall" x="19" y="12" width="1" height="5"/>
-          <rect class="m-wall" x="16" y="17" width="4" height="1"/>
-          <rect class="m-rim" x="5" y="0" width="10" height="1"/>
-          <rect class="m-drip" x="6" y="1" width="8" height="1"/>
-          <rect class="m-drip" x="7" y="2" width="6" height="1"/>
-          <rect class="m-drip" x="8" y="3" width="4" height="1"/>
-          <rect class="m-drip" x="9" y="4" width="2" height="1"/>
+      <button class="glass" type="button" aria-label="Pour an espresso over ice">
+        <svg viewBox="0 -3 23 26" shape-rendering="crispEdges" aria-hidden="true" focusable="false">
+          <rect class="g-table" x="3" y="22" width="17" height="1"/>
+          <rect class="g-in" x="6" y="5" width="11" height="15"/>
+          <rect class="g-base" x="6" y="20" width="11" height="1"/>
+          <rect class="g-shine" x="7" y="6" width="1" height="9"/>
+          <rect class="cup-row m-coffee" style="--i:0" x="6" y="19" width="11" height="1"/>
+          <rect class="cup-row m-coffee" style="--i:1" x="6" y="18" width="11" height="1"/>
+          <rect class="cup-row m-coffee" style="--i:2" x="6" y="17" width="11" height="1"/>
+          <rect class="cup-row m-coffee" style="--i:3" x="6" y="16" width="11" height="1"/>
+          <rect class="cup-row m-coffee" style="--i:4" x="6" y="15" width="11" height="1"/>
+          <rect class="cup-row m-coffee" style="--i:5" x="6" y="14" width="11" height="1"/>
+          <rect class="cup-row m-coffee" style="--i:6" x="6" y="13" width="11" height="1"/>
+          <rect class="cup-row m-coffee" style="--i:7" x="6" y="12" width="11" height="1"/>
+          <rect class="cup-row m-coffee" style="--i:8" x="6" y="11" width="11" height="1"/>
+          <rect class="cup-row m-coffee" style="--i:9" x="6" y="10" width="11" height="1"/>
+          <rect class="cup-row m-coffee" style="--i:10" x="6" y="9" width="11" height="1"/>
+          <rect class="cup-row m-crema" style="--i:11" x="6" y="8" width="11" height="1"/>
+          <g class="ice" style="--lift:6;--bd:0s">
+            <rect class="i-body" x="7" y="17" width="3" height="3"/>
+            <rect class="i-hi" x="7" y="17" width="1" height="1"/>
+            <rect class="i-hi2" x="8" y="17" width="1" height="1"/>
+            <rect class="i-sh" x="9" y="19" width="1" height="1"/>
+          </g>
+          <g class="ice" style="--lift:7;--bd:1.1s">
+            <rect class="i-body" x="11" y="17" width="3" height="3"/>
+            <rect class="i-hi" x="11" y="17" width="1" height="1"/>
+            <rect class="i-hi2" x="12" y="17" width="1" height="1"/>
+            <rect class="i-sh" x="13" y="19" width="1" height="1"/>
+          </g>
+          <g class="ice" style="--lift:7;--bd:2.1s">
+            <rect class="i-body" x="9" y="14" width="3" height="3"/>
+            <rect class="i-hi" x="9" y="14" width="1" height="1"/>
+            <rect class="i-hi2" x="10" y="14" width="1" height="1"/>
+            <rect class="i-sh" x="11" y="16" width="1" height="1"/>
+          </g>
+          <g class="stream">
+            <rect x="11" y="-3" width="1" height="1" fill-opacity=".2"/>
+            <rect x="11" y="-2" width="1" height="1" fill-opacity=".45"/>
+            <rect x="11" y="-1" width="1" height="1" fill-opacity=".7"/>
+            <rect x="11" y="0" width="1" height="20"/>
+          </g>
+          <rect class="drop" style="--d:2.2s" x="11" y="-1" width="1" height="2"/>
+          <rect class="drop" style="--d:2.4s" x="11" y="-1" width="1" height="2"/>
+          <rect class="drop" style="--d:2.65s" x="11" y="-1" width="1" height="2"/>
+          <rect class="g-wall" x="5" y="5" width="1" height="16"/>
+          <rect class="g-wall" x="17" y="5" width="1" height="16"/>
+          <rect class="g-wall" x="6" y="21" width="11" height="1"/>
         </svg>
       </button>
       <p class="coffee-note"><a href="mailto:fatema.kanij@bracu.ac.bd">hit me up for any queries or collaboration.</a></p>
-      <p class="coffee-hint" id="coffeeHint">▸ hover or tap the mug</p>
+      <p class="coffee-hint" id="coffeeHint">&#9656; hover or tap the glass</p>
     </div>
   </section>
 </main>
@@ -1042,12 +1074,12 @@
     window.addEventListener('scroll', () => { if(current) close(); }, { passive:true });
   })();
 
-  // Coffee mug: pours on mouse hover or on click / tap / Enter; press again for a refill
+  // Iced espresso glass: pours on mouse hover or on click / tap / Enter; press again for a refill
   (function(){
     const box = document.getElementById('coffee');
     const hint = document.getElementById('coffeeHint');
     if(!box) return;
-    const mug = box.querySelector('.mug');
+    const glass = box.querySelector('.glass');
     let timer;
     function done(){
       box.classList.remove('pouring');
@@ -1061,10 +1093,10 @@
       if(reduceMotion){ done(); return; }
       void box.offsetWidth; // restart the CSS animations on a refill
       box.classList.add('pouring');
-      timer = setTimeout(done, 2700);
+      timer = setTimeout(done, 3200);
     }
-    mug.addEventListener('pointerenter', e => { if(e.pointerType === 'mouse' && !box.classList.contains('full')) pour(); });
-    mug.addEventListener('click', pour);
+    glass.addEventListener('pointerenter', e => { if(e.pointerType === 'mouse' && !box.classList.contains('full')) pour(); });
+    glass.addEventListener('click', pour);
   })();
 
   // Discourage saving pictures: no right-click menu or dragging on images
